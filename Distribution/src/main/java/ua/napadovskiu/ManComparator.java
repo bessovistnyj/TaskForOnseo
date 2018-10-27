@@ -5,7 +5,7 @@ import java.util.Comparator;
 /**
  * comparator for sort.
  */
-public class MenComparator  implements Comparator<MenWithWeight> {
+public class ManComparator implements Comparator<ManWithWeight> {
 
     /**
      *
@@ -14,7 +14,7 @@ public class MenComparator  implements Comparator<MenWithWeight> {
      * @return
      */
     @Override
-    public int compare(MenWithWeight o1, MenWithWeight o2) {
+    public int compare(ManWithWeight o1, ManWithWeight o2) {
         if (o1.getWeight() == o2.getWeight()) {
             return 0;
         }

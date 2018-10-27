@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Separator {
 
     /**
-     *
+     * method return sum all elements of Array.
      * @param arrayList
-     * @return
+     * @return sum of
      */
-    private int sumElements(ArrayList<MenWithWeight> arrayList) {
+    public int sumElements(ArrayList<ManWithWeight> arrayList) {
         int sum = 0;
-        for (MenWithWeight element : arrayList) {
+        for (ManWithWeight element : arrayList) {
             sum += element.getWeight();
         }
 
@@ -20,20 +20,20 @@ public class Separator {
     }
 
     /**
-     *
-     * @param list
-     * @return
+     * method sort all elements and divided.
+     * @param list list of people with weight
+     * @return list of arrays.
      */
-    public ArrayList<ArrayList> divide(ArrayList<MenWithWeight> list) {
+    public ArrayList<ArrayList> divide(ArrayList<ManWithWeight> list) {
         ArrayList<ArrayList> result = new ArrayList<>();
 
-        MenComparator comparator = new MenComparator();
+        ManComparator comparator = new ManComparator();
 
         list.sort(comparator);
-        ArrayList<MenWithWeight> array1 = new ArrayList<>();
-        ArrayList<MenWithWeight> array2 = new ArrayList<>();
+        ArrayList<ManWithWeight> array1 = new ArrayList<>();
+        ArrayList<ManWithWeight> array2 = new ArrayList<>();
 
-        for (MenWithWeight men: list) {
+        for (ManWithWeight men: list) {
             if (sumElements(array1) <= sumElements(array2)) {
                 array1.add(men);
             } else {

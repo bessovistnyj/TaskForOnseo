@@ -1,5 +1,6 @@
 package ua.napadovskiu;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -12,30 +13,47 @@ import static org.junit.Assert.*;
  */
 public class SeparatorTest {
 
-    private MenWithWeight men1 = new MenWithWeight("name1", 85);
+    private final ManWithWeight men1 = new ManWithWeight("name1", 85);
 
-    private MenWithWeight men2 = new MenWithWeight("name2", 95);
+    private final ManWithWeight men2 = new ManWithWeight("name2", 95);
 
-    private MenWithWeight men3 = new MenWithWeight("name3", 55);
+    private final ManWithWeight men3 = new ManWithWeight("name3", 55);
 
-    private MenWithWeight men4 = new MenWithWeight("name4", 75);
+    private final ManWithWeight men4 = new ManWithWeight("name4", 75);
 
-    /**
-     *
-     */
-    @Test
-    public void WhenAddArrayThenReturnTwoArrays() {
-        Separator separator = new Separator();
-        ArrayList<MenWithWeight> list = new ArrayList<>();
+    private  final ArrayList<ManWithWeight> list = new ArrayList<>();
 
-        list.add(men1);
-        list.add(men2);
-        list.add(men3);
-        list.add(men4);
+    private final Separator separator = new Separator();
 
-        ArrayList<ArrayList> result = separator.divide(list);
 
-        assertThat(result.size(), is(2));
+    @Before
+    public void fillArray() {
+        this.list.add(this.men1);
+        this.list.add(this.men2);
+        this.list.add(this.men3);
+        this.list.add(this.men4);
 
     }
+
+
+    @Test
+    public void whenDivideArrayWhenFirstArrayReturnSummAllElements() {
+
+        ArrayList<ArrayList> result = this.separator.divide(list);
+
+        ArrayList array1 = result.get(0);
+        assertThat(separator.sumElements(array1), is(150));
+
+    }
+
+    @Test
+    public void whenDivideArrayWhenSecondtArrayReturnSummAllElements() {
+
+        ArrayList<ArrayList> result = this.separator.divide(list);
+
+        ArrayList array2 = result.get(1);
+        assertThat(separator.sumElements(array2), is(160));
+
+    }
+
 }

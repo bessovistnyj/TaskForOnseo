@@ -3,7 +3,7 @@ package ua.napadovskiu;
 /**
  *
  */
-public class MenWithWeight {
+public class ManWithWeight {
 
     /**
      *
@@ -22,7 +22,7 @@ public class MenWithWeight {
      * @param name
      * @param weight
      */
-    public MenWithWeight(String name, int weight) {
+    public ManWithWeight(String name, int weight) {
         this.name = name;
         this.weight = weight;
     }
@@ -89,12 +89,12 @@ public class MenWithWeight {
             return false;
         }
 
-        MenWithWeight menWithWeight = (MenWithWeight) obj;
+        ManWithWeight manWithWeight = (ManWithWeight) obj;
 
-        if (!getName().equals(menWithWeight.getName())) {
+        if (!getName().equals(manWithWeight.getName())) {
             return false;
         }
-        return getWeight() == (menWithWeight.getWeight());
+        return getWeight() == (manWithWeight.getWeight());
 
     }
 
